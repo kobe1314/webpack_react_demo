@@ -24,6 +24,9 @@ class ShowResultComponent extends Component {
 
     }
     render() {
+        const imgStyle = {
+            width: '50px'
+        };
         // const { key } = this.props;
         const { value } = this.props;
         console.log('showResult:' + value);
@@ -31,9 +34,11 @@ class ShowResultComponent extends Component {
         const loadingComp = !this.state.isLoading && <p>application is loading</p>
         const searchComp = this.state.list.map((personInfo) => {
             return (
-                <div> 
-                    <img src={personInfo.avatar_url} />
-                    <p>{personInfo.login}</p>
+                <div className="card"> 
+                    <img src={personInfo.avatar_url} style={imgStyle}/>
+                    <p className="card-text">
+                        {personInfo.login}
+                    </p>
                 </div>
             )
         })
@@ -41,7 +46,9 @@ class ShowResultComponent extends Component {
             <div> 
                 {initComp}
                 {loadingComp}
-                {searchComp}
+                <div className="row">
+                    {searchComp}
+                </div>
             </div>
 
         )

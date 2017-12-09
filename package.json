@@ -7,10 +7,11 @@
   "license": "ISC",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --progress --profile --colors --hot",
+    "start": "webpack-dev-server --progress --watch --profile --colors --hot",
     "build": "webpack --progress --profile --colors"
   },
   "devDependencies": {
+    "adjust-sourcemap-loader": "^1.1.0",
     "aproba": "^1.2.0",
     "asn1": "^0.2.3",
     "babel": "^6.23.0",

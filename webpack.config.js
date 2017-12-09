@@ -3,7 +3,7 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 var ROOT_PATH = path.resolve(__dirname);// Get current file root path 
-var ENTRY_PATH = path.resolve(ROOT_PATH,'src/components'); // parse this path to absolute path
+var ENTRY_PATH = path.resolve(ROOT_PATH,'src'); // parse this path to absolute path
 var BUILD_PATH = path.resolve(ROOT_PATH,'build'); // parse this file to absolute path
 
 module.exports = {
@@ -25,14 +25,9 @@ module.exports = {
         progress: true
     },
     module: {
-        loaders: [{
-                test: /\.scss$/,
-                // loaders: ['style', 'css?sourceMap', 'sass?sourceMap'],
-                loader: 'style-loader!css-loader!sass-loader',
-                // loader: 'style-loader!css-loader',
-                // loaders: ['style', 'css', 'sass'],
-                include: ENTRY_PATH
-            },
+        loaders: [
+            { test: /\.(scss|sass)$/, loader: 'style-loader!css-loader!sass-loader'},
+            { test: /\.css$/, loader: 'style!css' },
             {
                 test: /\.(png|jpg)$/,
                 loader: 'url-loader?limit=40000'
