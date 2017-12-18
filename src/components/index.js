@@ -1,7 +1,7 @@
 import '../../node_modules/bootstrap/scss/bootstrap.scss';
 import '../scss/main.scss';
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import SearchComponent from './search';
 import ShowResultComponent from './showResult';
 
@@ -31,6 +31,8 @@ class ParentsComponent extends Component {
     }
 }
 
-const app = document.createElement('div');
-document.body.appendChild(app);
-ReactDOM.render(<ParentsComponent />, app);
+export default ParentsComponent;
+
+// const app = document.createElement('div');
+// document.body.appendChild(app);
+// ReactDOM.render(<ParentsComponent />, app);
