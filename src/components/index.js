@@ -1,5 +1,6 @@
 import '../../node_modules/bootstrap/scss/bootstrap.scss';
 import '../scss/main.scss';
+import '../scss/loading.scss';
 import React, { Component } from 'react';
 // import ReactDOM from 'react-dom';
 import SearchComponent from './search';
